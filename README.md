@@ -46,7 +46,7 @@ take a while to grok.
 
 ## Assignment Testing and Evaluation
 
-Most of the points, will be awarded automatically, by
+All the points will be awarded automatically, by
 **evaluating your functions against a given test suite**.
 
 [Tests.hs](/tests/Test.hs) contains a very small suite
@@ -83,19 +83,19 @@ but you will not be graded on this.
 
 ## Submission Instructions
 
-To submit your code, just do:
+Submit your code via the HW-3 assignment on Gradescope.
+You must submit a single zip file containing a single directory with your repository inside.
+A simple way to create this zip file is:
 
-```bash
-$ make turnin
-```
+- Run `git push` to push your local changes to your private fork of the assignment repository
+- Navigate to your private fork on github and download source code as a zip
 
-`turnin` will provide you with a confirmation of the
-submission process; make sure that the size of the file
-indicated by `turnin` matches the size of your file.
-See the ACS Web page on [turnin](http://acs.ucsd.edu/info/turnin.php)
-for more information on the operation of the program.
+Please *do not* include the `.stack-work` folder into the submission.
 
-or alternatively, just `git push` you code to your github classroom repository.
+**Note:** Upon submission, Gradescope will only test your code on the *small public test suite*,
+so it will show maximum 39/270 points.
+After the deadline, we will regrade your submission on the full private test suite
+and you will get your full points.
 
 ## Data Structures and Overview
 
