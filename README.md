@@ -93,7 +93,7 @@ A simple way to create this zip file is:
 Please *do not* include the `.stack-work` folder into the submission.
 
 **Note:** Upon submission, Gradescope will only test your code on the *small public test suite*,
-so it will show maximum 39/270 points.
+so it will show maximum 56/270 points.
 After the deadline, we will regrade your submission on the full private test suite
 and you will get your full points.
 
