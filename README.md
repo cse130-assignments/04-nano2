@@ -83,7 +83,7 @@ but you will not be graded on this.
 
 ## Submission Instructions
 
-Submit your code via the HW-3 assignment on Gradescope.
+Submit your code via the HW-4 assignment on Gradescope.
 You must submit a single zip file containing a single directory with your repository inside.
 A simple way to create this zip file is:
 

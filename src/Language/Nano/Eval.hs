@@ -117,17 +117,17 @@ exitError (Error msg) = return (VErr msg)
 -- >>> eval []  (EBin Lt (EInt 2) (EBool True))
 -- *** Exception: Error {errMsg = "type error: binop"}
 --
--- >>> let e1 = EIf (EBin Lt "z1" "x") (EBin Ne "y" "z") (EBool False)
+-- >>> let e1 = EIf (EBin Lt (EVar "z1") (EVar "x")) (EBin Ne (EVar "y") (EVar "z")) (EBool False)
 -- >>> eval env0 e1
 -- True
 --
--- >>> let e2 = EIf (EBin Eq "z1" "x") (EBin Le "y" "z") (EBin Le "z" "y")
+-- >>> let e2 = EIf (EBin Eq (EVar "z1") (EVar "x")) (EBin Le (EVar "y") (EVar "z")) (EBin Le (EVar "z") (EVar "y"))
 -- >>> eval env0 e2
 -- False
 --
 -- part (c)
 --
--- >>> let e1 = EBin Plus "x" "y"
+-- >>> let e1 = EBin Plus (EVar "x") (EVar "y")
 -- >>> let e2 = ELet "x" (EInt 1) (ELet "y" (EInt 2) e1)
 -- >>> eval [] e2
 -- 3
