@@ -24,10 +24,10 @@ turnin:
 	git push origin master
 
 upstream:
-	git remote add upstream https://github.com/cse130-assignments/04-nano.git --allow-unrelated-histories
+	git remote add upstream https://github.com/cse130-assignments/04-nano.git
 
 update:
-	git pull upstream master
+	git pull upstream master --allow-unrelated-histories
 
 ghci:
 	$(STACK) ghci
