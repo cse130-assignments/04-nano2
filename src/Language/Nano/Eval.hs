@@ -97,7 +97,7 @@ exitError (Error msg) = return (VErr msg)
 --
 -- part (a)
 --
--- >>> eval env0 (EBin Minus (EBin Plus "x" "y") (EBin Plus "z" "z1"))
+-- >>> eval env0 (EBin Minus (EBin Plus (EVar "x") (EVar "y")) (EBin Plus (EVar "z") (EVar "z1")))
 -- 0
 --
 -- >>> eval env0 (EVar "p")
