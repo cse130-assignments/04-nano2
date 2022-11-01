@@ -25,22 +25,42 @@ tokens :-
   -- Comments
   "#".*                         ;
 
-  ------------------------------------------------------------------------------
-  -- Syntax  [ THIS IS THE ONLY SEGMENT YOU NEED TO CHANGE ]
-
+  -- Syntax
+  let                           { \p _ -> LET    p }
+  if                            { \p _ -> IF     p }
+  then                          { \p _ -> THEN   p }
+  else                          { \p _ -> ELSE   p }
+  True                          { \p _ -> TRUE   p }
+  False                         { \p _ -> FALSE  p }
   in                            { \p _ -> IN     p }
+  $digit+                       { \p s -> NUM p (read s) }
+  "->"                          { \p _ -> ARROW  p }
+  \=                            { \p _ -> EQB    p }
+  \\                            { \p _ -> LAM    p }
+  [\+]                          { \p _ -> PLUS   p }
+  [\-]                          { \p _ -> MINUS  p }
+  [\*]                          { \p _ -> MUL    p }
+  "<"                           { \p _ -> LESS   p }
+  "<="                          { \p _ -> LEQ    p }
+  "=="                          { \p _ -> EQL p }
+  "/="                          { \p _ -> NEQ    p }
   "&&"                          { \p _ -> AND    p }
+  "||"                          { \p _ -> OR     p }
+  \[                            { \p _ -> LBRAC  p }
+  \]                            { \p _ -> RBRAC  p }
   \(                            { \p _ -> LPAREN p }
   \)                            { \p _ -> RPAREN p }
   \:                            { \p _ -> COLON  p }
   \,                            { \p _ -> COMMA  p }
+  $alpha [$alpha $digit \_ \']* { \p s -> ID     p s }
 
-  -- DO NOT CHANGE ANYTHING AFTER THIS LINE ------------------------------------
-  ------------------------------------------------------------------------------
 {
 
 data Token
   = LET    AlexPosn
+  | THROW  AlexPosn
+  | TRY    AlexPosn
+  | CATCH  AlexPosn
   | TRUE   AlexPosn
   | FALSE  AlexPosn
   | IN     AlexPosn
@@ -55,8 +75,8 @@ data Token
   | LAM    AlexPosn
   | NUM    AlexPosn Int
   | ID     AlexPosn String
-  | ARROW  AlexPosn
   | EQB    AlexPosn
+  | ARROW  AlexPosn
   | EQL    AlexPosn
   | PLUS   AlexPosn
   | MINUS  AlexPosn
