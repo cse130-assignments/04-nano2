@@ -498,9 +498,7 @@ data Value = ...
 
 In addition to the changes to the data types, add support
 for two functions `head` and `tail` which do what the
-corresponding Haskell functions do. You will also
-need to implement equality on lists.
-Once you have implemented
+corresponding Haskell functions do. Once you have implemented
 this functionality and recompiled, you should get the
 following behavior
 
