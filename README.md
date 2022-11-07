@@ -483,6 +483,7 @@ get the following behavior:
 ### (f) 40 points
 
 Finally, extend your program to support operations on lists.
+Note that you will need to implement equality on lists.
 
 ```haskell
 data Binop = ...
